@@ -6,8 +6,8 @@ pygame.init()
 
 # Константы
 WIDTH, HEIGHT = 800, 600
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
 FPS = 60
 
 # Создание окна
@@ -92,14 +92,14 @@ while running:
         ball.speed_y *= random.choice([-1, 1])
 
     # Отрисовка
-    screen.fill(WHITE)
-    pygame.draw.rect(screen, BLACK, player.rect)
-    pygame.draw.rect(screen, BLACK, opponent.rect)
-    pygame.draw.ellipse(screen, BLACK, ball.rect)
+    screen.fill(BLUE)
+    pygame.draw.rect(screen, GREEN, player.rect)
+    pygame.draw.rect(screen, GREEN, opponent.rect)
+    pygame.draw.ellipse(screen, GREEN, ball.rect)
 
     # Отображение счета
     font = pygame.font.Font(None, 74)
-    text = font.render(f"{player_score}  {opponent_score}", True, BLACK)
+    text = font.render(f"{player_score}  {opponent_score}", True, GREEN)
     screen.blit(text, (WIDTH // 2 - text.get_width() // 2, 10))
 
     pygame.display.flip()
